@@ -1,6 +1,6 @@
 #include <iostream>
-#include <cassert>
-#include "ColorFunctions.h"
+#include <assert.h>
+#include "ColorCoder.h"
 
 using namespace TelCoColorCoder;
 
@@ -18,18 +18,12 @@ void testPairToNumber(MajorColor major, MinorColor minor, int expectedPairNumber
 }
 
 int main() {
-    // Tests
     testNumberToPair(4, WHITE, BROWN);
     testNumberToPair(5, WHITE, SLATE);
 
     testPairToNumber(BLACK, ORANGE, 12);
     testPairToNumber(VIOLET, SLATE, 25);
 
-    // Print reference manual
-    std::cout << "\nColor Code Reference Manual:\n";
-    for (const std::string &line : GetColorCodeReference()) {
-        std::cout << line << std::endl;
-    }
-
+    std::cout << "\n" << GetColorCodeManual();
     return 0;
 }
